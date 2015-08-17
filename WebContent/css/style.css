@@ -1,0 +1,55 @@
+@CHARSET "ISO-8859-1";
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#page {
+	position: relative;
+	width: 1000px;
+	height: 100%;
+	margin: auto;
+	background-color: #f6f6f6;
+}
+
+#divFormSearch {
+	width: 300px;
+	margin: auto;
+}
+
+#formAll {
+	width: 100%;
+	margin: auto;
+}
+
+#buttonAll {
+	display: block;
+	width: 100px;
+	margin: auto;
+}
+
+
+#divTable {
+	top: 50px;
+	width: 300px;
+	margin: auto;
+}
+
+#formContact {
+	width: 300px;
+	margin: auto;
+}
+
+#createContact {
+	display: block;
+/* 	width: 20px; */
+	margin: auto;
+}
+
+#buttonToHome {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
