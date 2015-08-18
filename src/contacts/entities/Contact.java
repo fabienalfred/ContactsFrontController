@@ -12,8 +12,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "personnes")
 @NamedQueries({
+	@NamedQuery(name="Contact.getContactByNom",
+				query="SELECT c FROM Contact c WHERE c.nom = :nom"),
 	@NamedQuery(name="Contact.getAll",
-			query="FROM Contact"),
+				query="FROM Contact"),
 	@NamedQuery(name="Contact.getContactsByCivilite",
 				query="SELECT c FROM Contact c WHERE c.civilite = :civ ORDER BY c.nom"),
 	@NamedQuery(name="Contact.getContactsByNom",

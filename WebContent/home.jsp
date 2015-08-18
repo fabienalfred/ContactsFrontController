@@ -19,18 +19,18 @@
 		<div id="divFormSearch">
 			<form action="FrontControllerServlet?cde=searchName" method="post">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<label class="mdl-textfield__label" for="inputName">Nom</label>
-					<input id="inputName" name="nameContact" class="mdl-textfield__input" type="text" />
+					<label class="mdl-textfield__label" for="inputName">Nom du contact à rechercher</label>
+					<input id="inputName" name="inputName" class="mdl-textfield__input" type="text" />
 				</div>
-<!-- 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable"> -->
-<!-- 					<label class="mdl-button mdl-js-button mdl-button--icon" for="inputName"> -->
-<!-- 						<i class="material-icons">search</i> -->
-<!-- 					</label> -->
-<!-- 					<div class="mdl-textfield__expandable-holder"> -->
-<!-- 						<input class="mdl-textfield__input" type="text" id="inputName" name="nameContact" /> -->
-<!-- 						<label class="mdl-textfield__label" for="inputName">Nom du contact</label> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
+			</form>
+		</div>
+		<br /><br />
+		<div id="divFormDelete">
+			<form action="FrontControllerServlet?cde=delete" method="post">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<label class="mdl-textfield__label" for="inputDeleteContact">Nom du contact à supprimer</label>
+					<input id="inputDeleteContact" name="inputDeleteContact" class="mdl-textfield__input" type="text" />
+				</div>
 			</form>
 		</div>
 		<br /><br />

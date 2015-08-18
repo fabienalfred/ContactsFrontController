@@ -15,8 +15,17 @@ public class ActionFactory {
 		case "home":
 			action = new ActionHome();
 			break;
+		case "searchName":
+			action = new ActionSearchName();
+			break;
 		case "getAll":
 			action = new ActionGetAll();
+			break;
+		case "add":
+			action = new ActionAdd();
+			break;
+		case "delete":
+			action = new ActionDelete();
 			break;
 		default:
 			break;

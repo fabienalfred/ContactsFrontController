@@ -14,7 +14,7 @@ html, body {
 	background-color: #f6f6f6;
 }
 
-#divFormSearch {
+#divFormSearch, #divFormDelete {
 	width: 300px;
 	margin: auto;
 }

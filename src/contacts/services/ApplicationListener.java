@@ -19,9 +19,9 @@ public class ApplicationListener implements ServletContextListener {
     }
 
 	public void contextInitialized(ServletContextEvent event)  { 
-//		ServletContext application = event.getServletContext();
-//		ContactDAO contactDAO = new ContactDAO();
-//		application.setAttribute("contactDAO", contactDAO);
+		ServletContext application = event.getServletContext();
+		ContactDAO contactDAO = new ContactDAO();
+		application.setAttribute("contactDAO", contactDAO);
     }
 	
 }

@@ -1,0 +1,13 @@
+<Context reloadable="true">
+	<Resource name="jdbc/contacts"
+				auth="Container"
+				type="javax.sql.DataSource"
+				driverClassName="com.mysql.jdbc.Driver"
+				url="jdbc:mysql://localhost:3306/contacts"
+				username="root"
+				password=""
+				maxActive="20"
+				maxIdle="10"
+				maxWait="100"
+				removeAbandoned="true" />
+</Context>
