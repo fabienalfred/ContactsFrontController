@@ -45,8 +45,8 @@ public class ContactDAO {
 		EntityTransaction et = em.getTransaction();
 		et.begin();
 		em.persist(c);
-		em.close();
 		et.commit();
+		em.close();
 	}
 
 	public void delete(String nom) {
@@ -58,24 +58,20 @@ public class ContactDAO {
 			Contact contact = em.find(c.getClass(), c.getId());
 			em.remove(contact);
 		}
-		em.close();
 		et.commit();
+		em.close();
 	}
 
 	@SuppressWarnings("unchecked")
 	public List<Contact> getContactByNom(String nom) {
 		EntityManager em = emf.createEntityManager();
-		EntityTransaction et = em.getTransaction();
-		et.begin();
 		Query query = em.createNamedQuery("Contact.getContactByNom")
 						.setParameter("nom", nom);
 		List<Contact> contacts = query.getResultList();
 		em.close();
-		et.commit();
 		return contacts;
 	}
 	
-	@SuppressWarnings("unchecked")
 	public List<Adresse> getAdresses(long id) {
 		EntityManager em = emf.createEntityManager();
 		Contact c = em.merge(em.find(Contact.class, id));
