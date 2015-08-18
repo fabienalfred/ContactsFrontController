@@ -15,7 +15,7 @@
 <title>Contacts</title>
 </head>
 <body>
-	<div id="page">
+	<div id="page" class="mdl-shadow--4dp">
 		<div id="divToHome">
 			<a href="FrontControllerServlet">
 				<button id="buttonToHome"
@@ -31,6 +31,8 @@
 						<th class="mdl-data-table__cell--non-numeric">Civilité</th>
 						<th class="mdl-data-table__cell--non-numeric">Nom</th>
 						<th class="mdl-data-table__cell--non-numeric">Prenom</th>
+						<th class="mdl-data-table__cell--non-numeric">Adresse 1</th>
+						<th class="mdl-data-table__cell--non-numeric">Adresse 2</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -39,6 +41,9 @@
 						<td class="mdl-data-table__cell--non-numeric">${c.civilite }</td>
 						<td class="mdl-data-table__cell--non-numeric">${c.nom }</td>
 						<td class="mdl-data-table__cell--non-numeric">${c.prenom }</td>
+						<c:forEach items="${c.adresses }" var="adresse">
+							<td class="mdl-data-table__cell--non-numeric">${adresse.ville }</td>
+						</c:forEach>
 					</tr>
 					</c:forEach>
 				</tbody>

@@ -17,6 +17,9 @@ public class ActionGetAll implements Action {
 		ContactDAO dao = (ContactDAO) application.getAttribute("contactDAO");
 		
 		List<Contact> contacts = dao.getAll();
+//		for(Contact c : contacts) {
+//			c.setAdresses(dao.getAdresses(c.getId()));
+//		}
 		request.setAttribute("contacts", contacts);
 		return "/contacts.jsp";
 	}

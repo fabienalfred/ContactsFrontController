@@ -1,8 +1,6 @@
-package contacts.services;
+package contacts.services.actions;
 
-import contacts.services.actions.Action;
-import contacts.services.actions.ActionGetAll;
-import contacts.services.actions.ActionHome;
+import contacts.services.ActionSearchName;
 
 public class ActionFactory {
 

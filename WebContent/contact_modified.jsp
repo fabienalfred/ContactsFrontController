@@ -15,7 +15,7 @@
 <title>Contact modifié</title>
 </head>
 <body>
-	<div id="page">
+	<div id="page" class="mdl-shadow--4dp">
 		<div id="divContactAdded">
 			<h2><c:out value="${actionOnContact }"></c:out></h2>
 		</div>

@@ -1,5 +1,6 @@
 package contacts.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -8,7 +9,9 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import contacts.entities.Adresse;
 import contacts.entities.Contact;
+import contacts.entities.ContactTO;
 
 
 public class ContactDAO {
@@ -19,11 +22,20 @@ public class ContactDAO {
 		emf = Persistence.createEntityManagerFactory("contacts");
 	}
 	
+	public Contact getContactById(long id) {
+		EntityManager em = emf.createEntityManager();
+		Contact c = em.find(Contact.class, id);
+		return c;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<Contact> getAll() {
 		EntityManager em = emf.createEntityManager();
 		Query query = em.createNamedQuery("Contact.getAll");
 		List<Contact> contacts = query.getResultList();
+		for(Contact c : contacts) {
+			c.setAdresses(getAdresses(c.getId()));
+		}
 		em.close();
 		return contacts;
 	}
@@ -61,6 +73,15 @@ public class ContactDAO {
 		em.close();
 		et.commit();
 		return contacts;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Adresse> getAdresses(long id) {
+		EntityManager em = emf.createEntityManager();
+		Contact c = em.merge(em.find(Contact.class, id));
+		List<Adresse> adresses = new ArrayList<>(c.getAdresses());
+		em.close();
+		return adresses;
 	}
 	
 
